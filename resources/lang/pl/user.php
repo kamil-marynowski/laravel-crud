@@ -15,5 +15,12 @@ return [
     ],
     'create' => [
         'new_user' => 'Nowy użytkownik',
+        'username'  => 'Nazwa użytkownika',
+        'email'     => 'Email',
+        'firstname' => 'Imię',
+        'lastname'  => 'Nazwisko',
+        'role'      => 'Rola',
+        'password'  => 'Hasło',
+        'repeat_password' => 'Powtórz hasło'
     ]
 ];

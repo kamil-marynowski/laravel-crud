@@ -41,15 +41,26 @@ class UserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'email'     => 'required',
-            'password'  => 'required',
+            'name'  => 'required',
+            'email'     => 'required|email',
+            'password'  => 'required|confirmed|min:6',
             'firstname' => 'required',
             'lastname'  => 'required',
+            'role'      => 'required',
         ]);
 
-        User::create(['email' => $request->post('email')]);
+        User::create([
+            'name' => $request->post('name'),
+            'email' => $request->post('email'),
+            'password' => $request->post('password'),
+            'firstname' => $request->post('firstname'),
+            'lastname' => $request->post('lastname'),
+            'role' => $request->post('role'),
+        ]);
 
-        return redirect()->route('user.list')
+
+
+        return redirect()->route('user')
             ->with('success','Post created successfully.');
     }
 
@@ -57,11 +68,13 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function show(User $user)
     {
-        //
+
+        return View::make('user.show')
+            ->with('user', $user);
     }
 
     /**
@@ -90,7 +103,7 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param \App\Models\User $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
