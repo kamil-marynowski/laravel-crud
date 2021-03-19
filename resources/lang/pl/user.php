@@ -1,26 +1,34 @@
 <?php
 return [
-    'title' => 'Translation demo',
-    'list' => [
-        'id'        => 'ID',
-        'username'  => 'Nazwa użytkownika',
-        'email'     => 'Email',
+    'all' => [
+        'edit' => 'Edytuj',
+        'id'   => 'ID',
+        'username' => 'Nazwa użytkownika',
+        'email' => 'Email',
         'firstname' => 'Imię',
-        'lastname'  => 'Nazwisko',
-        'role'      => 'Rola',
-        'active'    => 'Aktywny',
+        'lastname' => 'Nazwisko',
+        'role' => 'Rola',
+        'active' => 'Aktywny',
+        'users_list' => 'Lista użytkowników',
+        'yes' => 'Tak',
+        'delete' => 'Usuń',
+    ],
+    'list' => [
         'add_user' => 'Dodaj użytkownika',
         'show'     => 'Pokaż',
-        'edit'     => 'Edytuj'
     ],
     'create' => [
         'new_user' => 'Nowy użytkownik',
-        'username'  => 'Nazwa użytkownika',
-        'email'     => 'Email',
-        'firstname' => 'Imię',
-        'lastname'  => 'Nazwisko',
-        'role'      => 'Rola',
         'password'  => 'Hasło',
-        'repeat_password' => 'Powtórz hasło'
+        'repeat_password' => 'Powtórz hasło',
+        'add' => 'Dodaj',
+        'successfully' => 'Pomyślnie dodano użytkownika',
+    ],
+    'edit' => [
+        'save' => 'Zapisz',
+        'successfully' => 'Pomyślnie edytowano użytkownika',
+    ],
+    'delete' => [
+        'successfully' => 'Pomyślnie usunięto użytkownika'
     ]
 ];
